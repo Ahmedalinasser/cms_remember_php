@@ -1,24 +1,46 @@
 <div class="col-md-8">
 
+    <!-- PHP code HERE  \|||/  PHP code HERE -->
+    <!-- PHP code HERE   \ /   PHP code HERE -->
+    <!-- PHP code HERE    V    PHP code HERE -->
+<?php 
+    $query = "SELECT * FROM posts";
+    $connect_query = mysqli_query($connect, $query);
+    while ($rowsNo = mysqli_fetch_assoc($connect_query)) {
+        // foreach ($rowsNo  as $key => $value) {
+        //     # code...
+        // }
+        
+        $title = $rowsNo ['post_title'];
+        $author = $rowsNo['post_author'];
+        $date = $rowsNo['post_date'];
+        $content = $rowsNo['post_content'];
+        // echo $title;
+    ?>
+
+
+    <!-- PHP code HERE    ^    PHP code HERE -->
+    <!-- PHP code HERE   / \   PHP code HERE -->
+    <!-- PHP code HERE  /|||\  PHP code HERE -->
 <h1 class="page-header">
-    Page Heading
-    <small>Secondary Text</small>
+  
+    <small>  <?php echo $title?></small>
 </h1>
 
 <!-- First Blog Post -->
 <h2>
-    <a href="#">Blog Post Title</a>
+    <a href="#"><?php echo $title ?> </a>
 </h2>
 <p class="lead">
-    by <a href="index.php">Start Bootstrap</a>
+    by <a href="index.php"><?php echo $author?> </a>
 </p>
-<p><span class="glyphicon glyphicon-time"></span> Posted on August 28, 2013 at 10:00 PM</p>
+<p><span class="glyphicon glyphicon-time"></span> <?php echo $date ?> </p>
 <hr>
 <img class="img-responsive" src="http://placehold.it/900x300" alt="">
 <hr>
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, veritatis, tempora, necessitatibus inventore nisi quam quia repellat ut tempore laborum possimus eum dicta id animi corrupti debitis ipsum officiis rerum.</p>
+<p><?php  echo $content?> </p>
 <a class="btn btn-primary" href="#">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
-
+<?php }?>
 <hr>
 
 <!-- Pager -->

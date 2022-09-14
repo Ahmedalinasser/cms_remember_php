@@ -14,7 +14,7 @@ $connect = mysqli_connect (DB_HOST, DB_USER, DB_PASS, DB_NAME);
 // $connect = mysqli_connect ("localhost","root","012300","cms");
 
 if ($connect) {
-    echo "Database is connected. ";
+    // echo "Database is connected. ";
 }else {
     echo "Database is Off not connected. ";
 }
