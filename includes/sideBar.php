@@ -3,59 +3,69 @@
                 <!-- Blog Search Well -->
                 <div class="well">
                     <h4>Blog Search</h4>
+
+                    <form action="search.php" method="post">
                     <div class="input-group">
-                        <input type="text" class="form-control">
+                        <input type="text" name="search" class="form-control">
                         <span class="input-group-btn">
-                            <button class="btn btn-default" type="button">
+                            <button name="submit" class="btn btn-default" type="submit">
                                 <span class="glyphicon glyphicon-search"></span>
                         </button>
                         </span>
                     </div>
+                    </form>
+
                     <!-- /.input-group -->
                 </div>
 
                 <!-- Blog Categories Well -->
+
+                <?php 
+
+                
+    
+                // $outPuts = mysqli_fetch_assoc($queryDbConnection); 
+                // print_r($outPuts);
+                // print_r ($query_outputs);
+                
+
+            ?>
+
                 <div class="well">
                     <h4>Blog Categories</h4>
                     <div class="row">
 
-            <!-- PHP code HERE  \|||/  PHP code HERE -->
-            <!-- PHP code HERE   \ /   PHP code HERE -->
-            <!-- PHP code HERE    V    PHP code HERE -->
-            <?php 
-                $query = "SELECT * FROM categories";
-                $queryTodbConnection = mysqli_query($connect, $query);
-    
-                // $outPuts = mysqli_fetch_assoc($queryTodbConnection); 
-                // print_r($outPuts);
-                // print_r ($query_outputs);
-                while ($outPuts = mysqli_fetch_assoc($queryTodbConnection)) {
-                    $title = $outPuts['cat_title'];
-
-            ?>
+            <!-- PHP code HERE  |\|||/|  PHP code HERE -->
+            <!-- PHP code HERE    \ /    PHP code HERE -->
+            <!-- PHP code HERE     V     PHP code HERE -->
+            
                         <div class="col-lg-6">
                             <ul class="list-unstyled">
-                                <?php echo "<li><a href=''>".$title."</a></li>"; }?>
-                                </li>
-                                <li><a href="#">Category Name</a>
-                                </li>
-                                <li><a href="#">Category Name</a>
-                                </li>
+                            <?php
+                            $query = "SELECT * FROM categories";
+                            $queryDbConnection = mysqli_query($connect, $query); 
+                            while ($outPuts = mysqli_fetch_assoc($queryDbConnection)) {
+                            $title = $outPuts['cat_title'];?>
+                            
+                                <?php echo "<li> <a href='#'> ". $title." </a></li>"; }?>
+                                
+            <!-- PHP code HERE     ^     PHP code HERE -->
+            <!-- PHP code HERE    / \    PHP code HERE -->
+            <!-- PHP code HERE  |/|||\|  PHP code HERE -->
+                               
                             </ul>
                         </div>         
                         <!-- /.col-lg-6 -->
                         <div class="col-lg-6">
                             <ul class="list-unstyled">
+                                
                                 <li><a href="#">Category Name</a>
                                 </li>
                                 <li><a href="#">Category Name</a>
                                 </li>
-                                <li><a href="#">Category Name</a>
-                                </li>
-                                <li><a href="#">Category Name</a>
-                                </li>
+                                <li><a href="#">Category Name</a></li>
                             </ul>
-                        </div>
+                        </div> 
                         <!-- /.col-lg-6 -->
                     </div>
                     <!-- /.row -->

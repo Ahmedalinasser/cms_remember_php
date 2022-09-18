@@ -11,8 +11,8 @@
         <div class="row">
 
             <!-- Blog Entries Column -->
-            <?php include "includes/content.php" ?>
-            <?php //include "includes/search.php" ?>
+            <?php //include "includes/content.php" ?>
+            <?php include "includes/search.php" ?>
 
             <!-- Blog Sidebar Widgets Column -->
             <?php include "includes/sideBar.php"?>

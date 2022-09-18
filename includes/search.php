@@ -1,21 +1,34 @@
+
+
 <div class="col-md-8">
     
     <!-- PHP code HERE  |\|||/|  PHP code HERE -->
     <!-- PHP code HERE    \ /    PHP code HERE -->
     <!-- PHP code HERE     V     PHP code HERE -->
 <?php 
-    $query = "SELECT * FROM posts";
-    $connect_query = mysqli_query($connect, $query);
-    while ($rowsNo = mysqli_fetch_assoc($connect_query)) {
-        // foreach ($rowsNo  as $key => $value) {
-        //     # code...
-        // }
-        
+
+if (isset($_POST['search'])) {
+    $search = $_POST['search'];  
+}
+$query = "SELECT * FROM posts WHERE post_tag LIKE '%$search%' ";
+$queryDbConnection = mysqli_query($connect, $query);
+if (!$queryDbConnection) {
+  die("Seach Query Statement Has Faild ! ". mysqli_error($connect));
+}
+ 
+
+$count = mysqli_num_rows($queryDbConnection);
+if ($count == 0) {
+  echo "No Results";
+}else{
+
+  
+    while ($rowsNo = mysqli_fetch_assoc($queryDbConnection)) {
+                
         $title = $rowsNo ['post_title'];
         $author = $rowsNo['post_author'];
         $date = $rowsNo['post_date'];
         $content = $rowsNo['post_content'];
-        // echo $title;
     ?>
 
 
@@ -54,3 +67,4 @@
 </ul>
 
 </div>
+<?php }?>

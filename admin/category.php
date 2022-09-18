@@ -8,7 +8,7 @@
 <?php   include "includes/nav_bar.php"; ?>
 
         <div id="page-wrapper">
-<?php   include "includes/content.php"; ?>
+<?php   include "includes/catagory_content.php"; ?>
     
             <!-- /.container-fluid -->
 
