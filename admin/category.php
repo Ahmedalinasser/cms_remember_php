@@ -9,6 +9,16 @@
 
         <div id="page-wrapper">
 <?php   include "includes/catagory_content.php"; ?>
+<?php 
+    // if (isset($_GET['edit'])) {
+    //     $cat_id = $_GET['edit'];
+    //     include "includes/editCategory";
+    // }
+
+
+
+
+?>
     
             <!-- /.container-fluid -->
 
